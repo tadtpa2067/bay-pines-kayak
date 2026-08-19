@@ -3,223 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bay Pines Mobile Kayak Rental LLC | Pinellas County FL</title>
-<link rel="stylesheet" href="style.css">
+    <title>Bay Pines Veteran Mobile Kayak Rental, LLC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Branding -->
     <header>
-        <h1>Bay Pines Mobile Kayak Rental LLC</h1>
-        <p><strong>Veteran-Owned & Operated by Thomas Delgado, U.S. Army Veteran</strong></p> <!-- -->
+        <div class="nav-container">
+            <div class="logo">BAY PINES <span>VETERAN</span></div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#rentals">Rentals & Rates</a>
+                <a href="#location">Launch Location</a>
+                <a href="#tides">Tide Guide</a>
+                <a href="#booking" class="book-btn">BOOK NOW</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Introduction -->
-    <main>
-        <section id="about">
-            <h2>Convenient Mobile Kayak Delivery</h2>
-            <p>We deliver high-quality single and tandem kayaks directly to your waterfront adventure! Serving local residents, tourists, and fellow veterans looking to explore the beautiful Pinellas County coastal waters.</p> <!-- -->
-        </section>
+    <div id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mobile Kayak Rentals Delivered Right to War Veterans Memorial Park</h1>
+            <p>Veteran-owned, 100% online booking, and completely timed with local high tides. Skip the hauling—we launch you straight from the shoreline.</p>
+            <a href="#booking" class="cta-main">Check Rental Availability</a>
+        </div>
+    </div>
 
-        <!-- Primary Service Location -->
-        <section id="location">
-            <h2>Primary Launch Location</h2>
-            <h3>War Veterans Memorial Park</h3>
-            <p>Find us operating directly out of <strong>War Veterans Memorial Park</strong> in Bay Pines, Florida. We pull our mobile kayak trailer straight to the waterfront for quick, hassle-free launch and retrieval!</p> <!-- -->
-        </section>
-<!-- Rental Pricing Section -->
-        <section id="pricing">
-            <h2>Rental & Tour Rates</h2>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Single Kayak</h3>
-                    <p class="price">$35 <span>/ 4 Hours</span></p>
-                    <p class="price-day">$55 <span>/ Full Day</span></p>
-                    <p>Perfect for solo exploring and navigating tight mangrove trails.</p>
-                </div>
-                <div class="price-card">
-                    <h3>Tandem Kayak</h3>
-                    <p class="price">$50 <span>/ 4 Hours</span></p>
-                    <p class="price-day">$75 <span>/ Full Day</span></p>
-                    <p>Ideal for couples, friends, or paddling with kids.</p>
-                </div>
-                <div class="price-card highlighting">
-                    <h3>Guided Tours</h3>
-                    <p class="price">$65 <span>/ Person</span></p>
-                    <p class="price-day">2.5 Hours</p>
-                    <p>Expert-led scenic eco-tours through local coastal keys.</p>
+    <div class="section">
+        <div class="grid-3">
+            <div class="card">
+                <h2>🚚</h2>
+                <h3>We Bring the Gear</h3>
+                <p>Meet our mobile trailer right at the shoreline launch. We manage all heavy drop-off, setup, and cleanup logistics.</p>
+            </div>
+            <div class="card">
+                <h2>🌊</h2>
+                <h3>Tide-Optimized</h3>
+                <p>Our online ecosystem filters availability based on active tidal layers so you never get grounded in shallow mudflats.</p>
+            </div>
+            <div class="card">
+                <h2>💳</h2>
+                <h3>100% Cashless</h3>
+                <p>Secure automated checkout slots lock in your equipment and digital waivers in under 60 seconds.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="rentals" class="section">
+        <h2 class="section-title">Our Rental Fleet & Tiered Rates</h2>
+        <div class="rental-list">
+            <div class="rental-item">
+                <div class="rental-img" style="background-image: url('images/Lifetime Envoy Single Kayak.jpg');" role="img" aria-label="Lifetime Envoy single kayak"></div>
+                <div class="rental-info">
+                    <div>
+                        <h3>Single Sit-On-Top Kayak</h3>
+                        <p class="specs">Capacity: Up to 325 lbs | Lightweight Fiberglass Paddle & USCG PFD Included</p>
+                        <p>Stable, tracking-optimized single hull perfect for navigating local mangrove coastlines and viewing wildlife.</p>
+                    </div>
+                    <div>
+                        <span class="price-badge">1 Hour: $28</span>
+                        <span class="price-badge">2 Hours: $45</span>
+                        <span class="price-badge">4 Hours: $55</span>
+                        <br><br>
+                        <a href="#booking" class="cta-main" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Single</a>
+                    </div>
                 </div>
             </div>
-            <p class="discount-note"><strong>Military & First Responder Discount:</strong> Take 10% off any rental or tour rate!</p>
-        </section>
-Use code with caution.Save the file (Ctrl+S or Cmd+S).Step 2: Add the Layout Styles to Your CSSNow let's add code to style.css so these prices display side-by-side like a modern business layout.Open your style.css file in VS Code.Scroll to the very bottom of the file, hit enter to make a new line, and paste this styling block:css/* Pricing Table Styles */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.price-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-
-.price-card:hover {
-    transform: translateY(-3px);
-}
-
-.price-card h3 {
-    margin-top: 0;
-    color: #334155;
-}
-
-.price {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #0d6efd;
-    margin: 0.5rem 0 0 0;
-}
-
-.price span, .price-day span {
-    font-size: 0.9rem;
-    color: #64748b;
-    font-weight: normal;
-}
-
-.price-day {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #475569;
-    margin: 0 0 1rem 0;
-}
-
-/* Highlight the Tour Card */
-.price-card.highlighting {
-    border: 2px solid #0dcaf0;
-    background: #f0fdfa;
-}
-
-.discount-note {
-    background-color: #fef08a;
-    padding: 0.8rem;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 1rem;
-    color: #854d0e;
-}
-        <!-- Services & Equipment -->
-        <section id="services">
-            <h2>Our Rental Services & Gear</h2>
-            <ul>
-                <li><strong>Single Kayak Rentals</strong> – Perfect for solo exploring and navigating mangrove trails.</li> <!-- -->
-                <li><strong>Tandem Kayak Rentals</strong> – Ideal for couples, friends, and families.</li> <!-- -->
-                <li><strong>Guided Kayak Tours</strong> – Expert-led scenic tours for all skill levels.</li> <!-- -->
-                <li><strong>Beginner Safety Instruction</strong> – Learn paddling basics before you launch.</li> <!-- -->
-            </ul>
-            <p><em>Note: All rentals include paddles, life jackets (PFDs), and waterproof dry bags for your safety and convenience.</em></p> <!-- -->
-        </section>
-
-        <!-- Discounts & Booking Call to Action -->
-        <section id="booking">
-            <h2>Book Your Water Adventure</h2>
-            <p>We feature competitive local rates and proud <strong>promotional offers for military veterans</strong> and local Pinellas County residents!</p> <!-- -->
-            <p>Our automated online booking system is coming soon. In the meantime, contact us directly to schedule your custom delivery drop-off time!</p> <!-- -->
-            <button onclick="alert('Thank you for contacting us! Call or text to book.')">Contact to Book Now</button>
-        </section>
-     <!-- FAQ Section -->
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-container">
-                <details>
-                    <summary>Where exactly do we meet for launch and retrieval?</summary>
-                    <div class="faq-content">
-                        <p>We operate directly out of <strong>War Veterans Memorial Park</strong> in Bay Pines, FL. Our mobile kayak trailer will meet you right at the designated waterfront launch area near the boat ramps. Look for our branded truck and trailer!</p>
+            <div class="rental-item">
+                <div class="rental-img" style="background-image: url('images/Lifetime Envoy Tandem Kayak.jpg');" role="img" aria-label="Lifetime Envoy tandem kayak"></div>
+                <div class="rental-info">
+                        <h3>Tandem (2-Person) Kayak</h3>
+                        <p class="specs">Capacity: Up to 500 lbs | 2 Lightweight Paddles & 2 USCG PFDs Included</p>
+                        <p>Spacious, ultra-stable tandem configuration built for couples, families, or paddling with kids.</p>
+                
+                        <span class="price-badge">1 Hour: $40</span>
+                        <span class="price-badge">2 Hours: $70</span>
+                        <span class="price-badge">4 Hours: $80</span>
+                        <br><br>
+                        <a href="#booking" class="cta-main" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Tandem</a>
                     </div>
-                </details>
-
-                <details>
-                    <summary>What is included with my kayak rental?</summary>
-                    <div class="faq-content">
-                        <p>Every single and tandem rental includes high-quality lightweight paddles, a properly sized Coast Guard-approved Life Jacket (PFD), and a waterproof dry bag to keep your phone, keys, and wallet safe while on the water.</p>
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Do you offer discounts for veterans and military personnel?</summary>
-                    <div class="faq-content">
-                        <p>Yes! As a veteran-owned business, we proudly offer a 10% discount for active-duty military, veterans, and local first responders. Be sure to select the military promotion tier during your online booking.</p>
-                    </div>
-                </details>
-
-                <details>
-                    <summary>What happens if the weather in Pinellas County is bad?</summary>
-                    <div class="faq-content">
-                        <p>Your safety is our top priority. If severe weather, high winds, or lightning strikes affect the Bay Pines area on your scheduled rental day, we will notify you to issue a full refund or help you reschedule to another clear day.</p>
-                    </div>
-                </details>
+                </div>
             </div>
-        </section>
-Use code with caution.Save the file (Ctrl+S or Cmd+S).Note: Using the native HTML <details> and <summary> tags creates a clickable dropdown element automatically without requiring complex JavaScript code.Step 2: Add the Clean Dropdown Styles to Your CSSLet's add styling to make these accordions open and close smoothly with a clean border layout.Open your style.css file in VS Code.Scroll all the way down to the very bottom, make a new line, and paste this styling block:css/* FAQ Accordion Styles */
-.faq-container {
-    margin-top: 1.5rem;
-}
+        </div>
+    </div>
 
-details {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    margin-bottom: 0.8rem;
-    padding: 0.8rem 1rem;
-    transition: background-color 0.2s ease;
-}
+    <div id="location" class="section">
+        <h2 class="section-title">Launch Location Instructions</h2>
+        <div class="alert-box">
+            <strong>⚠️ 2026 Park Construction Advisory Notice:</strong> Pinellas County is actively repairing the main motorized boat ramp infrastructure at War Veterans Memorial Park through November 2026. <strong>Our mobile operations are unaffected.</strong> The dedicated paddlecraft and kayak shoreline launch zone remains completely open, unhindered, and free to park.
+        </div>
+        <p><strong>Meeting Point:</strong> Drive past the main vehicle parking bays straight toward the northern edge of the park (past the playground structure). Look directly for our wrapped mobile transport rig parked near the sandy kayak shoreline launch clearing.</p>
+    </div>
 
-details[open] {
-    background: #ffffff;
-    border-color: #0dcaf0; /* Changes border to theme teal when opened */
-}
+    <div id="tides" class="section">
+        <h2 class="section-title">Boca Ciega Bay Tide Guide</h2>
+        <p>Because the waters surrounding Bay Pines feature vast shallow flats, we strictly enforce safe depth operational windows to ensure your hull completely clears the local oyster bars and seagrass beds.</p>
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th>Water Level Threshold</th>
+                    <th>Depth Metric</th>
+                    <th>System Operational Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>High-Tide Peak (+/- 2 Hours)</strong></td>
+                    <td>&gt; 1.8 feet</td>
+                    <td class="status-green">Optimal Launch Window (All Booking Channels Open)</td>
+                </tr>
+                <tr>
+                    <td><strong>Transition Low/High Blocks</strong></td>
+                    <td>1.0 to 1.7 feet</td>
+                    <td style="color: #ffc107; font-weight: bold;">Cautionary Phase (Shallow Shoreline Warnings Issued)</td>
+                </tr>
+                <tr>
+                    <td><strong>Low-Tide Peak (+/- 1.5 Hours)</strong></td>
+                    <td>&lt; 0.9 feet</td>
+                    <td class="status-red">Blackout Window (System Locks Auto-Disabled)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-summary {
-    font-weight: 600;
-    color: #334155;
-    cursor: pointer;
-    outline: none;
-    font-size: 1.1rem;
-    padding: 0.2rem 0;
-}
+    <div id="booking" class="section">
+        <h2 class="section-title">Secure Online Reservation Hub</h2>
+        <div id="booking-engine">
+            <div class="steps">
+                <div class="step active" id="st1" onclick="switchStep(1)">1. Equipment & Date</div>
+                <div class="step" id="st2" onclick="switchStep(2)">2. Liability Waiver</div>
+                <div class="step" id="st3" onclick="switchStep(3)">3. Cashless Checkout</div>
+            </div>
 
-summary:hover {
-    color: #0d6efd; /* Turns text blue when hovering over the question */
-}
+            <!-- STEP 1 -->
+            <div class="step-panel active" id="panel1">
+                <div class="form-group">
+                    <label>Select Kayak Asset Class</label>
+                    <select id="asset-type" class="form-group" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                        <option value="45">Single Sit-On-Top Kayak (2-Hour Blended Optimal Block) - $45</option>
+                        <option value="70">Tandem 2-Person Kayak (2-Hour Blended Optimal Block) - $70</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Target Launch Window (Tide-Filtered Calendar)</label>
+                    <select id="time-window" class="form-group" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                        <option>Friday - High Tide Optimal Window (4:24 PM - 6:15 PM)</option>
+                        <option>Saturday - High Tide Optimal Window (7:00 AM - 9:42 AM)</option>
+                        <option>Sunday - High Tide Optimal Window (1:22 PM - 5:22 PM)</option>
+                    </select>
+                </div>
+                <button type="button" class="cta-main" onclick="switchStep(2)">Proceed to Digital Waiver</button>
+            </div>
 
-.faq-content {
-    margin-top: 0.8rem;
-    padding-top: 0.8rem;
-    border-top: 1px dashed #e2e8f0;
-    color: #475569;
-}
+            <!-- STEP 2 -->
+            <div class="step-panel" id="panel2">
+                <div class="waiver-box">
+                    <h3>BAY PINES VETERAN MOBILE KAYAK RENTAL, LLC<br>RELEASE OF LIABILITY WAIVER</h3><br>
+                    <p><strong>1. Assumption of Risk:</strong> I explicitly acknowledge that kayaking and paddleboarding on the waterways surrounding War Veterans Memorial Park and Boca Ciega Bay involve inherent risks including weather shifts, strong currents, underwater mudflats, and marine wildlife. I freely assume all risks.</p><br>
+                    <p><strong>2. Safety Gear:</strong> I agree that a U.S. Coast Guard-approved Personal Flotation Device (Life Jacket) must be worn and securely fastened at all times while on open water.</p><br>
+                    <p><strong>3. Equipment Damage & Lost Gear Fees:</strong> If equipment is damaged, lost, or stolen, I authorize BPVMKR to charge the credit card on file for full replacement costs: Single Kayak ($550), Tandem Kayak ($850), Paddle ($65).</p>
+                </div>
+                <div class="form-group" style="display:flex; align-items:center; gap:0.5rem;">
+                    <input type="checkbox" id="waiver-agree">
+                    <label for="waiver-agree" style="margin-bottom:0;">I explicitly read, accept, and digitally sign the liability agreement terms.</label>
+                </div>
+                <div class="form-group">
+                    <label>Full Legal Name (Digital Signature Signature)</label>
+                    <input type="text" id="signer-name" placeholder="Type your full legal name">
+                </div>
+                <button type="button" class="cta-main" onclick="validateWaiver()">Proceed to Payment</button>
+            </div>
 
-.faq-content p {
-    margin: 0;
-}
-</main>
+            <!-- STEP 3 -->
+            <div class="step-panel" id="panel3">
+                <div style="background: #f1f1f1; padding:1.5rem; border-radius:4px; margin-bottom:1.5rem;">
+                    <h3>Order Summary</h3>
+                    <p id="summary-text">Selected Equipment: Single Sit-On-Top Kayak</p>
+                    <p style="font-weight:bold; color:var(--primary); font-size:1.2rem; margin-top:0.5rem;">Total Due: <span id="summary-total">$45.00</span></p>
+                </div>
+                <div class="form-group">
+                    <label>Email Address for Delivery Pin-Drop & Ticket Confirmation</label>
+                    <input type="email" id="cust-email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Dummy Card Details (Stripe Sandbox Emulation)</label>
+                    <input type="text" placeholder="4242 4242 4242 4242" style="margin-bottom:0.5rem; width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                    <div style="display:flex; gap:1rem;">
+                        <input type="text" placeholder="MM/YY" style="flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                        <input type="text" placeholder="CVC" style="flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                    </div>
+                </div>
+                <button type="button" class="cta-main" style="background-color:var(--success); width:100%;" onclick="executeMockCheckout()">Process Secure Payment</button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Bay Pines Mobile Kayak Rental LLC. All Rights Reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Bay Pines Veteran Kayaks</h4>
+                <p style="color:#aaa;">Proudly Veteran Owned & Operated. Formed under Bay Pines Veteran Mobile Kayak Rental, LLC.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#rentals">Rates</a></li>
+                    <li><a href="#location">Park Location</a></li>
+                    <li><a href="#tides">Tidal Charts</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Compliance & Rules</h4>
+                <ul>
+                    <li><a href="#booking">Digital Waiver</a></li>
+                    <li><a href="#tides">Grounding Policies</a></li>
+                    <li>Pinellas Co. Permit Compliant</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Bay Pines Veteran Mobile Kayak Rental, LLC. All Rights Reserved. All operations run cashless via mobile dispatch.
+        </div>
     </footer>
+
+    <script>
+        function switchStep(stepNum) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+            
+            document.getElementById('st' + stepNum).classList.add('active');
+            document.getElementById('panel' + stepNum).classList.add('active');
+            
+            // Sync summary metrics
+            var assetSelect = document.getElementById('asset-type');
+            var price = assetSelect.value;
+            var text = assetSelect.options[assetSelect.selectedIndex].text;
+            
+            document.getElementById('summary-text').innerText = text;
+            document.getElementById('summary-total').innerText = '$' + price + '.00';
+        }
+
+        function validateWaiver() {
+            var checked = document.getElementById('waiver-agree').checked;
+            var name = document.getElementById('signer-name').value.trim();
+            if(!checked || name === "") {
+                alert("Please review the legal agreement terms, check the box, and enter your signature name to proceed.");
+                return;
+            }
+            switchStep(3);
+        }
+
+        function executeMockCheckout() {
+            var email = document.getElementById('cust-email').value.trim();
+            if(email === "") {
+                alert("Please provide a valid email address to route your delivery coordinates.");
+                return;
+            }
+            alert("Reservation Successful! Checkout complete via secure digital architecture. A confirmation ticket featuring your dynamic tide metrics and shoreline pin-drop has been routed to " + email);
+            window.location.reload();
+        }
+    </script>
 </body>
 </html>
-git add .
-git commit -m "Add style.css and link to homepage"
-git push
-git add .
-git commit -m "Added layout buttons and logo graphic"
-git push
-git adgit commit -m "Add pricing section grid and rates"d <div class=""></div>
-git push

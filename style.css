@@ -1,131 +1,100 @@
-/* Custom Styles for Bay Pines Mobile Kayak Rental LLC */
+:root {
+    --ocean: #123e52;
+    --ocean-deep: #092b3a;
+    --teal: #087f8c;
+    --mint: #d8f0e8;
+    --sand: #f7f3ea;
+    --ink: #18323a;
+    --muted: #60747a;
+    --line: #dce7e5;
+    --warning: #c27828;
+    --success: #237a5b;
+    --danger: #a53e45;
+}
 
-/* Global Settings */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f9f9; /* Soft sand white */
-    color: #333333;
-    margin: 0;
-    padding: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+}
+h1, h2, h3, h4, nav, button, select, input, label, .price-badge, .specs, .steps, .cta-main { font-family: 'Trebuchet MS', Arial, sans-serif; }
+a { color: inherit; }
+header { background: rgba(9, 43, 58, 0.97); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 18px rgba(9, 43, 58, 0.18); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1180px; margin: 0 auto; }
+.logo { font-weight: bold; font-size: 1.15rem; letter-spacing: .12em; }
+.logo span { color: #8ed3c3; }
+nav { display: flex; align-items: center; gap: 1.35rem; }
+nav a { color: #f5fbf8; text-decoration: none; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; transition: color .2s ease; }
+nav a:hover { color: #8ed3c3; }
+.book-btn { background: #e79c4b; padding: .55rem 1rem; border-radius: 3px; color: var(--ocean-deep); font-weight: bold; }
+.book-btn:hover { background: #f4bb70; color: var(--ocean-deep); }
+.hero { min-height: 610px; display: grid; place-items: center; background: linear-gradient(90deg, rgba(9, 43, 58, .86), rgba(9, 43, 58, .28)), url('images/Lifetime Envoy Single Kayak.jpg') center/cover no-repeat; color: white; padding: 6rem 2rem; }
+.hero-content { max-width: 1180px; width: 100%; margin: 0 auto; }
+.hero h1 { max-width: 760px; font-size: clamp(2.5rem, 6vw, 5.2rem); line-height: 1.02; letter-spacing: -.03em; margin-bottom: 1.5rem; }
+.hero p { max-width: 620px; font-size: 1.15rem; color: #d9f1eb; margin-bottom: 2rem; }
+.cta-main { background: #e79c4b; color: var(--ocean-deep); padding: .85rem 1.4rem; border: 0; font-size: .92rem; letter-spacing: .04em; font-weight: bold; border-radius: 3px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform .2s ease, background .2s ease; }
+.cta-main:hover { background: #f4bb70; transform: translateY(-2px); }
+.section { max-width: 1180px; margin: 0 auto; padding: 5.5rem 2rem; }
+.section-title { color: var(--ocean); font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.15; margin-bottom: 2.5rem; }
+.section-title::after { content: ''; display: block; width: 52px; height: 4px; background: var(--teal); margin-top: .75rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.card { background: #fffdf8; padding: 2.2rem; min-height: 230px; border: 0; box-shadow: none; text-align: left; }
+.card h2 { font-size: 2rem; }
+.card h3 { margin: 1.15rem 0 .55rem; color: var(--ocean); }
+.card p, .section > p { color: var(--muted); }
+.rental-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.rental-item { display: flex; background: #fffdf8; overflow: hidden; box-shadow: 0 12px 28px rgba(18, 62, 82, .08); }
+.rental-img { flex: 0 0 39%; background-size: cover; background-position: center; min-height: 320px; }
+.rental-info { flex: 1; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+.rental-info h3 { color: var(--ocean); font-size: 1.5rem; }
+.price-badge { display: inline-block; background: var(--mint); color: var(--ocean); padding: .45rem .75rem; border-radius: 2px; font-weight: bold; font-size: .82rem; margin: 0 .45rem .65rem 0; }
+.specs { color: var(--teal); font-size: .82rem; font-weight: bold; letter-spacing: .02em; }
+.alert-box { background: #fff1d8; border-left: 4px solid var(--warning); padding: 1.35rem 1.5rem; margin-bottom: 2rem; color: #68451e; }
+.matrix-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: #fffdf8; box-shadow: 0 8px 20px rgba(18, 62, 82, .06); }
+.matrix-table th, .matrix-table td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid var(--line); }
+.matrix-table th { background: var(--ocean); color: white; font-family: 'Trebuchet MS', Arial, sans-serif; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; }
+.status-green { color: var(--success); font-weight: bold; }
+.status-red { color: var(--danger); font-weight: bold; }
+.waiver-box { background: #fffdf8; border: 1px solid var(--line); padding: 1.5rem; height: 300px; overflow-y: auto; font-size: .9rem; color: var(--muted); margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; margin-bottom: .45rem; color: var(--ocean); font-size: .85rem; font-weight: bold; }
+.form-group input[type='text'], .form-group input[type='email'], select, .form-group select { width: 100%; padding: .85rem; border: 1px solid var(--line); border-radius: 2px; background: white; color: var(--ink); font-size: .95rem; }
+input:focus, select:focus { outline: 2px solid #8ed3c3; outline-offset: 1px; }
+#booking { background: #e7f1ed; max-width: none; }
+#booking > * { max-width: 980px; margin-left: auto; margin-right: auto; }
+#booking-engine { background: #fffdf8; padding: 2.5rem; box-shadow: 0 14px 32px rgba(18, 62, 82, .1); text-align: center; }
+.steps { display: flex; justify-content: space-between; margin-bottom: 2rem; background: #edf3f0; padding: .35rem; border-radius: 3px; }
+.step { flex: 1; padding: .7rem .4rem; border-radius: 2px; font-weight: bold; font-size: .8rem; color: var(--muted); cursor: pointer; }
+.step.active { background: var(--ocean); color: white; }
+.step-panel { display: none; text-align: left; }
+.step-panel.active { display: block; }
+footer { background: var(--ocean-deep); color: white; padding: 4rem 2rem 2rem; font-size: .9rem; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; max-width: 1180px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 2rem; }
+.footer-col h4 { margin-bottom: 1rem; font-size: 1rem; letter-spacing: .05em; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: .6rem; }
+.footer-col ul li a { color: #b5cbc7; text-decoration: none; }
+.footer-col ul li a:hover { color: white; }
+.footer-bottom { text-align: center; padding-top: 2rem; color: #91aaa6; }
+
+@media (max-width: 800px) {
+    header { padding: 1rem; }
+    .nav-container { align-items: flex-start; gap: .8rem; flex-direction: column; }
+    nav { flex-wrap: wrap; gap: .65rem .9rem; }
+    nav a { font-size: .72rem; }
+    .hero { min-height: 570px; padding: 4rem 1.25rem; }
+    .section { padding: 3.8rem 1.25rem; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .rental-item { flex-direction: column; }
+    .rental-img { min-height: 235px; flex-basis: auto; }
+    .rental-info { padding: 1.6rem; }
+    .matrix-table { font-size: .82rem; display: block; overflow-x: auto; white-space: nowrap; }
+    #booking-engine { padding: 1.25rem; }
+    .steps { flex-direction: column; }
+    .step { text-align: left; padding-left: .8rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-/* Header & Branding */
-header {
-    background-color: #0d6efd; /* Deep ocean blue */
-    color: #ffffff;
-    text-align: center;
-    padding: 2.5rem 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 0.5px;
-}
-
-header p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-    color: #e0f2fe; /* Light sky accent */
-}
-
-/* Main Content Layout */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-}
-
-section {
-    background: #ffffff;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border-left: 5px solid #0dcaf0; /* Teal accent bar */
-}
-
-h2 {
-    color: #0b5ed7;
-    margin-top: 0;
-}
-
-ul {
-    padding-left: 1.2rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-/* Modern Booking Button */
-button {
-    background-color: #ffc107; /* Bright sunset yellow */
-    color: #212529;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    display: inline-block;
-    margin-top: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-button:hover {
-    background-color: #ffca2c; /* Brighter yellow on hover */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #666666;
-    font-size: 0.9rem;
-}
-/* FAQ Accordion Styles */
-.faq-container {
-    margin-top: 1.5rem;
-}
-
-details {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    margin-bottom: 0.8rem;
-    padding: 0.8rem 1rem;
-    transition: background-color 0.2s ease;
-}
-
-details[open] {
-    background: #ffffff;
-    border-color: #0dcaf0; /* Changes border to theme teal when opened */
-}
-
-summary {
-    font-weight: 600;
-    color: #334155;
-    cursor: pointer;
-    outline: none;
-    font-size: 1.1rem;
-    padding: 0.2rem 0;
-}
-
-summary:hover {
-    color: #0d6efd; /* Turns text blue when hovering over the question */
-}
-
-.faq-content {
-    margin-top: 0.8rem;
-    padding-top: 0.8rem;
-    border-top: 1px dashed #e2e8f0;
-    color: #475569;
-}
-
-.faq-content p {
-    margin: 0;
-}
