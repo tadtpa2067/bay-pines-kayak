@@ -10,19 +10,23 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">BAY PINES <span>VETERAN</span></div>
+            <div class="logo">
+                <span class="logo-primary">BAY PINES <span>VETERAN</span></span>
+            </div>
             <nav>
                 <a href="#home">Home</a>
                 <a href="#rentals">Rentals & Rates</a>
                 <a href="#location">Launch Location</a>
                 <a href="#tides">Tide Guide</a>
                 <a href="#booking" class="book-btn">BOOK NOW</a>
+                <span class="logo-service">MOBILE KAYAK RENTAL</span>
             </nav>
         </div>
     </header>
 
     <div id="home" class="hero">
         <div class="hero-content">
+            <img class="hero-logo" src="images/Logo-transparent.png" alt="Bay Pines Veteran Kayak Rental logo">
             <p>Veteran-owned, 100% online booking, and completely timed with local high tides. Skip the hauling—we launch you straight from the shoreline.</p>
             <a href="#booking" class="cta-main">Check Rental Availability</a>
         </div>
@@ -52,7 +56,7 @@
         <h2 class="section-title">Our Rental Fleet & Tiered Rates</h2>
         <div class="rental-list">
             <div class="rental-item">
-                <div class="rental-img" style="background-image: url('images/Lifetime Envoy Single Kayak.jpg');" role="img" aria-label="Lifetime Envoy single kayak"></div>
+                <div class="rental-img" style="background-image: url('Lifetime Envoy Single Kayak.jpg');" role="img" aria-label="Lifetime Envoy single kayak"></div>
                 <div class="rental-info">
                     <div>
                         <h3>Single Sit-On-Top Kayak</h3>
@@ -64,22 +68,24 @@
                         <span class="price-badge">2 Hours: $45</span>
                         <span class="price-badge">4 Hours: $55</span>
                         <br><br>
-                        <a href="#booking" class="cta-main" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Single</a>
+                        <a href="#booking" class="cta-main booking-red" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Single</a>
                     </div>
                 </div>
             </div>
             <div class="rental-item">
-                <div class="rental-img" style="background-image: url('images/Lifetime Envoy Tandem Kayak.jpg');" role="img" aria-label="Lifetime Envoy tandem kayak"></div>
+                <div class="rental-img" style="background-image: url('Lifetime Envoy Tandem Kayak.jpg');" role="img" aria-label="Lifetime Envoy tandem kayak"></div>
                 <div class="rental-info">
+                    <div>
                         <h3>Tandem (2-Person) Kayak</h3>
                         <p class="specs">Capacity: Up to 500 lbs | 2 Lightweight Paddles & 2 USCG PFDs Included</p>
                         <p>Spacious, ultra-stable tandem configuration built for couples, families, or paddling with kids.</p>
-                
+                    </div>
+                    <div>
                         <span class="price-badge">1 Hour: $40</span>
                         <span class="price-badge">2 Hours: $70</span>
                         <span class="price-badge">4 Hours: $80</span>
                         <br><br>
-                        <a href="#booking" class="cta-main" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Tandem</a>
+                        <a href="#booking" class="cta-main booking-blue" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Reserve Tandem</a>
                     </div>
                 </div>
             </div>
@@ -93,6 +99,40 @@
         </div>
         <p><strong>Meeting Point:</strong> Drive past the main vehicle parking bays straight toward the northern edge of the park (past the playground structure). Look directly for our wrapped mobile transport rig parked near the sandy kayak shoreline launch clearing.</p>
     </div>
+
+    <section id="gallery" class="section">
+        <h2 class="section-title">Explore Bay Pines</h2>
+        <div class="image-gallery">
+            <figure class="gallery-item gallery-item-tall">
+                <img src="images/Kayak Launch WVMP.jpg" alt="Kayak launch area at War Veterans Memorial Park" loading="lazy">
+                <figcaption>Our shoreline launch area</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/WVMP1.jpg" alt="War Veterans Memorial Park waterfront" loading="lazy">
+                <figcaption>War Veterans Memorial Park</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/WMVP2.jpg" alt="Waterfront view at War Veterans Memorial Park" loading="lazy">
+                <figcaption>Quiet waters near the launch</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/WVMP3.jpg" alt="Scenic park view near Boca Ciega Bay" loading="lazy">
+                <figcaption>Boca Ciega Bay scenery</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/WVMP4.webp" alt="Coastal view at War Veterans Memorial Park" loading="lazy">
+                <figcaption>Coastal paddling views</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/WVMP5.jpg" alt="Nature and water at War Veterans Memorial Park" loading="lazy">
+                <figcaption>Wildlife along the shoreline</figcaption>
+            </figure>
+            <figure class="gallery-item gallery-item-wide">
+                <img src="images/Archie Island.webp" alt="Archie Island near Bay Pines" loading="lazy">
+                <figcaption>Archie Island</figcaption>
+            </figure>
+        </div>
+    </section>
 
     <div id="tides" class="section">
         <h2 class="section-title">Boca Ciega Bay Tide Guide</h2>
@@ -151,7 +191,7 @@
                         <option>Sunday - High Tide Optimal Window (1:22 PM - 5:22 PM)</option>
                     </select>
                 </div>
-                <button type="button" class="cta-main" onclick="switchStep(2)">Proceed to Digital Waiver</button>
+                <button type="button" class="cta-main booking-red" onclick="switchStep(2)">Proceed to Digital Waiver</button>
             </div>
 
             <!-- STEP 2 -->
@@ -170,7 +210,7 @@
                     <label>Full Legal Name (Digital Signature Signature)</label>
                     <input type="text" id="signer-name" placeholder="Type your full legal name">
                 </div>
-                <button type="button" class="cta-main" onclick="validateWaiver()">Proceed to Payment</button>
+                <button type="button" class="cta-main booking-blue" onclick="validateWaiver()">Proceed to Payment</button>
             </div>
 
             <!-- STEP 3 -->
@@ -192,7 +232,7 @@
                         <input type="text" placeholder="CVC" style="flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
                     </div>
                 </div>
-                <button type="button" class="cta-main" style="background-color:var(--success); width:100%;" onclick="executeMockCheckout()">Process Secure Payment</button>
+                <button type="button" class="cta-main booking-red" style="width:100%;" onclick="executeMockCheckout()">Process Secure Payment</button>
             </div>
         </div>
     </div>
@@ -201,6 +241,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Bay Pines Veteran Kayaks</h4>
+                <img class="company-logo" src="images/Logo-transparent.png" alt="Bay Pines Veteran Kayak Rental logo" loading="lazy">
                 <p style="color:#aaa;">Proudly Veteran Owned & Operated. Formed under Bay Pines Veteran Mobile Kayak Rental, LLC.</p>
             </div>
             <div class="footer-col">

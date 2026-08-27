@@ -25,18 +25,26 @@ a { color: inherit; }
 header { background: rgba(9, 43, 58, 0.97); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 18px rgba(9, 43, 58, 0.18); }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1180px; margin: 0 auto; }
 .logo { font-weight: bold; font-size: 1.15rem; letter-spacing: .12em; }
-.logo span { color: #8ed3c3; }
+.logo-primary, .logo-primary span { color: #e05252; }
+.logo-service { margin-left: .35rem; color: #e05252; font-size: 1.15rem; letter-spacing: .12em; white-space: nowrap; }
 nav { display: flex; align-items: center; gap: 1.35rem; }
 nav a { color: #f5fbf8; text-decoration: none; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; transition: color .2s ease; }
 nav a:hover { color: #8ed3c3; }
-.book-btn { background: #e79c4b; padding: .55rem 1rem; border-radius: 3px; color: var(--ocean-deep); font-weight: bold; }
-.book-btn:hover { background: #f4bb70; color: var(--ocean-deep); }
+.book-btn { background: #b22234; padding: .55rem 1rem; border-radius: 0; color: white; font-weight: bold; white-space: nowrap; }
+.book-btn:hover { background: #123e52; color: white; }
 .hero { min-height: 610px; display: grid; place-items: center; background: linear-gradient(90deg, rgba(9, 43, 58, .86), rgba(9, 43, 58, .28)), url('images/Lifetime Envoy Single Kayak.jpg') center/cover no-repeat; color: white; padding: 6rem 2rem; }
 .hero-content { max-width: 1180px; width: 100%; margin: 0 auto; }
+.hero-logo { display: block; width: min(460px, 82vw); height: auto; margin: 1.5rem auto; }
+.hero-content > .cta-main { display: block; width: fit-content; margin: 0 auto; }
 .hero h1 { max-width: 760px; font-size: clamp(2.5rem, 6vw, 5.2rem); line-height: 1.02; letter-spacing: -.03em; margin-bottom: 1.5rem; }
-.hero p { max-width: 620px; font-size: 1.15rem; color: #d9f1eb; margin-bottom: 2rem; }
-.cta-main { background: #e79c4b; color: var(--ocean-deep); padding: .85rem 1.4rem; border: 0; font-size: .92rem; letter-spacing: .04em; font-weight: bold; border-radius: 3px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform .2s ease, background .2s ease; }
-.cta-main:hover { background: #f4bb70; transform: translateY(-2px); }
+.hero p { max-width: 620px; font-size: 1.15rem; color: #d9f1eb; margin: 0 auto 2rem; text-align: center; }
+.cta-main, .book-btn, button { border: 2px solid white; }
+.cta-main { background: #123e52; color: white; padding: .85rem 1.4rem; font-size: .92rem; letter-spacing: .04em; font-weight: bold; border-radius: 3px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform .2s ease, background .2s ease; }
+.cta-main:hover { background: #b22234; color: white; transform: translateY(-2px); }
+.booking-red { background: #b22234; }
+.booking-red:hover { background: #123e52; }
+.booking-blue { background: #123e52; }
+.booking-blue:hover { background: #b22234; }
 .section { max-width: 1180px; margin: 0 auto; padding: 5.5rem 2rem; }
 .section-title { color: var(--ocean); font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.15; margin-bottom: 2.5rem; }
 .section-title::after { content: ''; display: block; width: 52px; height: 4px; background: var(--teal); margin-top: .75rem; }
@@ -52,6 +60,13 @@ nav a:hover { color: #8ed3c3; }
 .rental-info h3 { color: var(--ocean); font-size: 1.5rem; }
 .price-badge { display: inline-block; background: var(--mint); color: var(--ocean); padding: .45rem .75rem; border-radius: 2px; font-weight: bold; font-size: .82rem; margin: 0 .45rem .65rem 0; }
 .specs { color: var(--teal); font-size: .82rem; font-weight: bold; letter-spacing: .02em; }
+.image-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 180px; gap: 1rem; }
+.gallery-item { position: relative; min-width: 0; overflow: hidden; background: var(--ocean); }
+.gallery-item-wide { grid-column: span 2; }
+.gallery-item-tall { grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .35s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2.5rem 1rem .8rem; background: linear-gradient(transparent, rgba(9, 43, 58, .88)); color: white; font-family: 'Trebuchet MS', Arial, sans-serif; font-size: .82rem; }
 .alert-box { background: #fff1d8; border-left: 4px solid var(--warning); padding: 1.35rem 1.5rem; margin-bottom: 2rem; color: #68451e; }
 .matrix-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: #fffdf8; box-shadow: 0 8px 20px rgba(18, 62, 82, .06); }
 .matrix-table th, .matrix-table td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid var(--line); }
@@ -74,23 +89,30 @@ input:focus, select:focus { outline: 2px solid #8ed3c3; outline-offset: 1px; }
 footer { background: var(--ocean-deep); color: white; padding: 4rem 2rem 2rem; font-size: .9rem; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; max-width: 1180px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 2rem; }
 .footer-col h4 { margin-bottom: 1rem; font-size: 1rem; letter-spacing: .05em; }
+.footer-col:first-child { text-align: center; }
+.company-logo { display: block; width: min(260px, 100%); height: auto; margin: 0 auto 1rem; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: .6rem; }
 .footer-col ul li a { color: #b5cbc7; text-decoration: none; }
 .footer-col ul li a:hover { color: white; }
 .footer-bottom { text-align: center; padding-top: 2rem; color: #91aaa6; }
 
+.rental-info .cta-main, #panel1 .cta-main { border: 2px solid white; }
+
 @media (max-width: 800px) {
-    header { padding: 1rem; }
-    .nav-container { align-items: flex-start; gap: .8rem; flex-direction: column; }
-    nav { flex-wrap: wrap; gap: .65rem .9rem; }
-    nav a { font-size: .72rem; }
+    header { padding: .75rem 1rem; overflow-x: auto; }
+    .nav-container { min-width: max-content; align-items: center; gap: 1rem; flex-direction: row; }
+    nav { flex-wrap: nowrap; gap: .65rem; }
+    nav a { font-size: .65rem; white-space: nowrap; }
     .hero { min-height: 570px; padding: 4rem 1.25rem; }
     .section { padding: 3.8rem 1.25rem; }
     .grid-3 { grid-template-columns: 1fr; }
     .rental-item { flex-direction: column; }
     .rental-img { min-height: 235px; flex-basis: auto; }
     .rental-info { padding: 1.6rem; }
+    .image-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+    .gallery-item-wide { grid-column: span 2; }
+    .gallery-item-tall { grid-row: span 2; }
     .matrix-table { font-size: .82rem; display: block; overflow-x: auto; white-space: nowrap; }
     #booking-engine { padding: 1.25rem; }
     .steps { flex-direction: column; }
