@@ -32,7 +32,7 @@ nav a { color: #f5fbf8; text-decoration: none; font-size: .82rem; letter-spacing
 nav a:hover { color: #8ed3c3; }
 .book-btn { background: #b22234; padding: .55rem 1rem; border-radius: 0; color: white; font-weight: bold; white-space: nowrap; }
 .book-btn:hover { background: #123e52; color: white; }
-.hero { min-height: 610px; display: grid; place-items: center; background: linear-gradient(90deg, rgba(9, 43, 58, .86), rgba(9, 43, 58, .28)), url('images/Lifetime Envoy Single Kayak.jpg') center/cover no-repeat; color: white; padding: 6rem 2rem; }
+.hero { min-height: 610px; display: grid; place-items: center; background: var(--ocean-deep); color: white; padding: 6rem 2rem; }
 .hero-content { max-width: 1180px; width: 100%; margin: 0 auto; }
 .hero-logo { display: block; width: min(460px, 82vw); height: auto; margin: 1.5rem auto; }
 .hero-content > .cta-main { display: block; width: fit-content; margin: 0 auto; }
