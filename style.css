@@ -55,7 +55,7 @@ nav a:hover { color: #8ed3c3; }
 .card p, .section > p { color: var(--muted); }
 .rental-list { display: flex; flex-direction: column; gap: 1.5rem; }
 .rental-item { display: flex; background: #fffdf8; overflow: hidden; box-shadow: 0 12px 28px rgba(18, 62, 82, .08); }
-.rental-img { flex: 0 0 39%; background-size: cover; background-position: center; min-height: 320px; }
+.rental-img { flex: 0 0 39%; background-color: #e8f5e9; background-size: contain; background-position: center; background-repeat: no-repeat; min-height: 320px; }
 .rental-info { flex: 1; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
 .rental-info h3 { color: var(--ocean); font-size: 1.5rem; }
 .price-badge { display: inline-block; background: var(--mint); color: var(--ocean); padding: .45rem .75rem; border-radius: 2px; font-weight: bold; font-size: .82rem; margin: 0 .45rem .65rem 0; }
