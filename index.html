@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bay Pines Veteran Mobile Kayak Rental, LLC</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -13,7 +14,8 @@
             <div class="logo">
                 <span class="logo-primary">BAY PINES <span>VETERAN</span></span>
             </div>
-            <nav>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
                 <a href="#home">Home</a>
                 <a href="#rentals">Rentals & Rates</a>
                 <a href="#location">Launch Location</a>
@@ -165,41 +167,49 @@
         </table>
     </div>
 
-    <div id="booking" class="section">
+    <section id="booking" class="section">
         <h2 class="section-title">Secure Online Reservation Hub</h2>
-        <div id="booking-engine">
+        <form id="booking-engine" novalidate>
             <div class="steps">
-                <div class="step active" id="st1" onclick="switchStep(1)">1. Equipment & Date</div>
-                <div class="step" id="st2" onclick="switchStep(2)">2. Liability Waiver</div>
-                <div class="step" id="st3" onclick="switchStep(3)">3. Cashless Checkout</div>
+                <button class="step active" id="st1" type="button" aria-current="step" onclick="switchStep(1)">1. Equipment & Date</button>
+                <button class="step" id="st2" type="button" onclick="switchStep(2)">2. Liability Waiver</button>
+                <button class="step" id="st3" type="button" onclick="switchStep(3)">3. Checkout</button>
             </div>
 
             <!-- STEP 1 -->
-            <div class="step-panel active" id="panel1">
+            <div class="step-panel active" id="panel1" aria-labelledby="st1">
                 <div class="form-group">
-                    <label for="asset-type">Select Kayak and Rental Duration</label>
-                    <select id="asset-type" class="form-group" onchange="updateSummary()" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
-                        <option value="28" data-duration="1 Hour">Lifetime Kenai Single Kayak - 1 Hour - $28</option>
-                        <option value="45" data-duration="2 Hours">Lifetime Kenai Single Kayak - 2 Hours - $45</option>
-                        <option value="55" data-duration="4 Hours">Lifetime Kenai Single Kayak - 4 Hours - $55</option>
-                        <option value="40" data-duration="1 Hour">Lifetime Envoy 126&quot; Tandem Kayak - 1 Hour - $40</option>
-                        <option value="70" data-duration="2 Hours">Lifetime Envoy 126&quot; Tandem Kayak - 2 Hours - $70</option>
-                        <option value="80" data-duration="4 Hours">Lifetime Envoy 126&quot; Tandem Kayak - 4 Hours - $80</option>
+                    <label for="asset-type">Select Kayak</label>
+                    <select id="asset-type" name="asset-type" onchange="updateSummary()">
+                        <option value="single">Lifetime Kenai Single Kayak</option>
+                        <option value="tandem">Lifetime Envoy 126&quot; Tandem Kayak</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Select Target Launch Window (Tide-Filtered Calendar)</label>
-                    <select id="time-window" class="form-group" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                    <label for="rental-duration">Select Rental Duration</label>
+                    <select id="rental-duration" name="rental-duration" onchange="updateSummary()">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="4">4 Hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rental-date">Select Rental Date</label>
+                    <input type="date" id="rental-date" name="rental-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time-window">Select Target Launch Window</label>
+                    <select id="time-window" name="time-window">
                         <option>Friday - High Tide Optimal Window (4:24 PM - 6:15 PM)</option>
                         <option>Saturday - High Tide Optimal Window (7:00 AM - 9:42 AM)</option>
                         <option>Sunday - High Tide Optimal Window (1:22 PM - 5:22 PM)</option>
                     </select>
                 </div>
-                <button type="button" class="cta-main booking-red" onclick="switchStep(2)">Proceed to Digital Waiver</button>
+                <button type="button" class="cta-main booking-red" onclick="proceedToWaiver()">Proceed to Digital Waiver</button>
             </div>
 
             <!-- STEP 2 -->
-            <div class="step-panel" id="panel2">
+            <div class="step-panel" id="panel2" aria-labelledby="st2">
                 <div class="waiver-box">
                     <h3>BAY PINES VETERAN MOBILE KAYAK RENTAL, LLC<br>RELEASE OF LIABILITY WAIVER</h3><br>
                     <p><strong>1. Assumption of Risk:</strong> I explicitly acknowledge that kayaking and paddleboarding on the waterways surrounding War Veterans Memorial Park and Boca Ciega Bay involve inherent risks including weather shifts, strong currents, underwater mudflats, and marine wildlife. I freely assume all risks.</p><br>
@@ -211,35 +221,37 @@
                     <label for="waiver-agree" style="margin-bottom:0;">I explicitly read, accept, and digitally sign the liability agreement terms.</label>
                 </div>
                 <div class="form-group">
-                    <label>Full Legal Name (Digital Signature Signature)</label>
-                    <input type="text" id="signer-name" placeholder="Type your full legal name">
+                    <label for="signer-name">Full Legal Name (Digital Signature)</label>
+                    <input type="text" id="signer-name" name="signer-name" placeholder="Type your full legal name">
                 </div>
-                <button type="button" class="cta-main booking-blue" onclick="validateWaiver()">Proceed to Payment</button>
+                <div class="form-actions">
+                    <button type="button" class="text-button" onclick="switchStep(1)">Back</button>
+                    <button type="button" class="cta-main booking-blue" onclick="validateWaiver()">Continue to Checkout</button>
+                </div>
             </div>
 
             <!-- STEP 3 -->
-            <div class="step-panel" id="panel3">
-                <div style="background: #f1f1f1; padding:1.5rem; border-radius:4px; margin-bottom:1.5rem;">
+            <div class="step-panel" id="panel3" aria-labelledby="st3">
+                <div class="order-summary">
                     <h3>Order Summary</h3>
                     <p id="summary-text">Lifetime Kenai Single Kayak - 1 Hour</p>
-                    <p style="font-weight:bold; color:var(--primary); font-size:1.2rem; margin-top:0.5rem;">Total Due: <span id="summary-total">$28.00</span></p>
+                    <p>Total Due: <span id="summary-total">$28.00</span></p>
                 </div>
                 <div class="form-group">
-                    <label>Email Address for Delivery Pin-Drop & Ticket Confirmation</label>
-                    <input type="email" id="cust-email" placeholder="name@example.com" required>
+                    <label for="cust-email">Email Address for Confirmation</label>
+                    <input type="email" id="cust-email" name="cust-email" placeholder="name@example.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Dummy Card Details (Stripe Sandbox Emulation)</label>
-                    <input type="text" placeholder="4242 4242 4242 4242" style="margin-bottom:0.5rem; width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
-                    <div style="display:flex; gap:1rem;">
-                        <input type="text" placeholder="MM/YY" style="flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
-                        <input type="text" placeholder="CVC" style="flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
-                    </div>
+                    <label>Payment</label>
+                    <div class="payment-placeholder">Secure payment will be completed through the connected booking provider.</div>
                 </div>
-                <button type="button" class="cta-main booking-red" style="width:100%;" onclick="executeMockCheckout()">Process Secure Payment</button>
+                <div class="form-actions">
+                    <button type="button" class="text-button" onclick="switchStep(2)">Back</button>
+                    <button type="button" class="cta-main booking-red" onclick="executeMockCheckout()">Confirm Reservation</button>
+                </div>
             </div>
-        </div>
-    </div>
+        </form>
+    </section>
 
     <footer>
         <div class="footer-grid">
@@ -317,46 +329,5 @@
 <!-- END OF CANCELLATION & WEATHER POLICY BLOCK -->
     </footer>
 
-    <script>
-        function switchStep(stepNum) {
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-            
-            document.getElementById('st' + stepNum).classList.add('active');
-            document.getElementById('panel' + stepNum).classList.add('active');
-            
-            updateSummary();
-        }
-
-        function updateSummary() {
-            var assetSelect = document.getElementById('asset-type');
-            var price = assetSelect.value;
-            var option = assetSelect.options[assetSelect.selectedIndex];
-            var text = option.text.replace(/ - \$\d+$/, '');
-            
-            document.getElementById('summary-text').innerText = text;
-            document.getElementById('summary-total').innerText = '$' + price + '.00';
-        }
-
-        function validateWaiver() {
-            var checked = document.getElementById('waiver-agree').checked;
-            var name = document.getElementById('signer-name').value.trim();
-            if(!checked || name === "") {
-                alert("Please review the legal agreement terms, check the box, and enter your signature name to proceed.");
-                return;
-            }
-            switchStep(3);
-        }
-
-        function executeMockCheckout() {
-            var email = document.getElementById('cust-email').value.trim();
-            if(email === "") {
-                alert("Please provide a valid email address to route your delivery coordinates.");
-                return;
-            }
-            alert("Reservation Successful! Checkout complete via secure digital architecture. A confirmation ticket featuring your dynamic tide metrics and shoreline pin-drop has been routed to " + email);
-            window.location.reload();
-        }
-    </script>
 </body>
 </html>
