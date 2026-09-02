@@ -177,10 +177,14 @@
             <!-- STEP 1 -->
             <div class="step-panel active" id="panel1">
                 <div class="form-group">
-                    <label>Select Kayak Asset Class</label>
-                    <select id="asset-type" class="form-group" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
-                        <option value="45">Single Sit-On-Top Kayak (2-Hour Blended Optimal Block) - $45</option>
-                        <option value="70">Tandem 2-Person Kayak (2-Hour Blended Optimal Block) - $70</option>
+                    <label for="asset-type">Select Kayak and Rental Duration</label>
+                    <select id="asset-type" class="form-group" onchange="updateSummary()" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+                        <option value="28" data-duration="1 Hour">Lifetime Kenai Single Kayak - 1 Hour - $28</option>
+                        <option value="45" data-duration="2 Hours">Lifetime Kenai Single Kayak - 2 Hours - $45</option>
+                        <option value="55" data-duration="4 Hours">Lifetime Kenai Single Kayak - 4 Hours - $55</option>
+                        <option value="40" data-duration="1 Hour">Lifetime Envoy 126&quot; Tandem Kayak - 1 Hour - $40</option>
+                        <option value="70" data-duration="2 Hours">Lifetime Envoy 126&quot; Tandem Kayak - 2 Hours - $70</option>
+                        <option value="80" data-duration="4 Hours">Lifetime Envoy 126&quot; Tandem Kayak - 4 Hours - $80</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -217,8 +221,8 @@
             <div class="step-panel" id="panel3">
                 <div style="background: #f1f1f1; padding:1.5rem; border-radius:4px; margin-bottom:1.5rem;">
                     <h3>Order Summary</h3>
-                    <p id="summary-text">Selected Equipment: Single Sit-On-Top Kayak</p>
-                    <p style="font-weight:bold; color:var(--primary); font-size:1.2rem; margin-top:0.5rem;">Total Due: <span id="summary-total">$45.00</span></p>
+                    <p id="summary-text">Lifetime Kenai Single Kayak - 1 Hour</p>
+                    <p style="font-weight:bold; color:var(--primary); font-size:1.2rem; margin-top:0.5rem;">Total Due: <span id="summary-total">$28.00</span></p>
                 </div>
                 <div class="form-group">
                     <label>Email Address for Delivery Pin-Drop & Ticket Confirmation</label>
@@ -321,10 +325,14 @@
             document.getElementById('st' + stepNum).classList.add('active');
             document.getElementById('panel' + stepNum).classList.add('active');
             
-            // Sync summary metrics
+            updateSummary();
+        }
+
+        function updateSummary() {
             var assetSelect = document.getElementById('asset-type');
             var price = assetSelect.value;
-            var text = assetSelect.options[assetSelect.selectedIndex].text;
+            var option = assetSelect.options[assetSelect.selectedIndex];
+            var text = option.text.replace(/ - \$\d+$/, '');
             
             document.getElementById('summary-text').innerText = text;
             document.getElementById('summary-total').innerText = '$' + price + '.00';
