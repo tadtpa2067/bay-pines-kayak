@@ -24,10 +24,14 @@ h1, h2, h3, h4, nav, button, select, input, label, .price-badge, .specs, .steps,
 a { color: inherit; }
 header { background: rgba(9, 43, 58, 0.97); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 18px rgba(9, 43, 58, 0.18); }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1180px; margin: 0 auto; }
-.logo { font-weight: bold; font-size: 1.15rem; letter-spacing: .12em; }
-.logo-primary, .logo-primary span { color: #e05252; }
-.logo-service { margin-left: .35rem; color: #e05252; font-size: 1.15rem; letter-spacing: .12em; white-space: nowrap; }
-nav { display: flex; align-items: center; gap: 1.35rem; }
+.logo { display: flex; flex-direction: column; flex: 0 0 auto; font-weight: bold; font-size: 1.05rem; line-height: 1.2; letter-spacing: .1em; }
+.logo-primary, .logo-service { display: block; white-space: nowrap; }
+.logo-service { margin-top: .2rem; font-size: .72rem; letter-spacing: .14em; }
+.logo-letter:nth-of-type(3n + 1) { color: #e05252; }
+.logo-letter:nth-of-type(3n + 2) { color: #f5fbf8; }
+.logo-letter:nth-of-type(3n) { color: #9cc9e5; }
+nav { display: flex; flex: 1; align-items: center; justify-content: flex-end; gap: 1.35rem; }
+.nav-links { display: flex; flex: 1; align-items: center; justify-content: center; gap: 1.35rem; }
 .nav-toggle { display: none; }
 nav a { color: #f5fbf8; text-decoration: none; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; transition: color .2s ease; }
 nav a:hover { color: #8ed3c3; }
@@ -100,6 +104,7 @@ footer { background: var(--ocean-deep); color: white; padding: 4rem 2rem 2rem; f
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; max-width: 1180px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 2rem; }
 .footer-col h4 { margin-bottom: 1rem; font-size: 1rem; letter-spacing: .05em; }
 .footer-col:first-child { text-align: center; }
+.footer-logo { align-items: center; margin: 0 auto 1rem; }
 .company-logo { display: block; width: min(260px, 100%); height: auto; margin: 0 auto 1rem; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: .6rem; }
@@ -115,8 +120,10 @@ footer { background: var(--ocean-deep); color: white; padding: 4rem 2rem 2rem; f
     .nav-toggle { display: block; margin-left: auto; border: 1px solid rgba(255,255,255,.55); background: transparent; color: white; padding: .45rem .75rem; font-size: .75rem; font-weight: bold; cursor: pointer; }
     nav { display: none; flex-basis: 100%; align-items: stretch; flex-direction: column; gap: .25rem; padding-top: .5rem; }
     nav.is-open { display: flex; }
+    .nav-links { flex-direction: column; align-items: stretch; gap: .25rem; }
     nav a { font-size: .75rem; padding: .6rem .25rem; }
-    .logo-service { display: none; }
+    .logo { font-size: .86rem; }
+    .logo-service { display: block; font-size: .6rem; letter-spacing: .1em; }
     .hero { min-height: 570px; padding: 4rem 1.25rem; }
     .section { padding: 3.8rem 1.25rem; }
     .grid-3 { grid-template-columns: 1fr; }
